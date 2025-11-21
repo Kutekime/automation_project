@@ -2,7 +2,7 @@ from .base_page import BasePage
 
 class InventoryPage(BasePage):
     # Локаторы
-    TITLE = ("css", ".title")
+    TITLE = ("css selector", "[data-test='title']")
     MENU_BUTTON = ("id", "react-burger-menu-btn")
     LOGOUT_LINK = ("id", "logout_sidebar_link")
     

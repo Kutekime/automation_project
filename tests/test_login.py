@@ -7,7 +7,7 @@ def test_successful_login(driver):
     login_page.login("standard_user", "secret_sauce")
     
     inventory_page = InventoryPage(driver)
-    assert inventory_page.get_title() == "PRODUCTS"
+    assert inventory_page.get_title() == "Products"
 
 def test_logout(driver):
     login_page = LoginPage(driver)
