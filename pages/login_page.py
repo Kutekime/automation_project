@@ -5,6 +5,7 @@ class LoginPage(BasePage):
     USERNAME_INPUT = ("id", "user-name")
     PASSWORD_INPUT = ("id", "password") 
     LOGIN_BUTTON = ("id", "login-button")
+    ERROR_MESSAGE = ("css selector", "[data-test='error']")
     
     def open(self):
         self.driver.get("https://www.saucedemo.com")
@@ -13,3 +14,10 @@ class LoginPage(BasePage):
         self.input_text(self.USERNAME_INPUT, username)
         self.input_text(self.PASSWORD_INPUT, password)
         self.click(self.LOGIN_BUTTON)
+
+    def get_error_message(self):
+        """Возвращает текст ошибки если она есть"""
+        try:
+            return self.find_element(self.ERROR_MESSAGE).text
+        except:
+            return None
